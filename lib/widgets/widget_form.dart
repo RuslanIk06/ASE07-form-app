@@ -168,7 +168,9 @@ class _FormWidgetState extends State<FormWidget> {
               const SizedBox(height: 16),
               ElevatedButton.icon(
                 onPressed: () {
-                  onSubmit();
+                  if (formKey.currentState!.validate()) {
+                    onSubmit();
+                  }
                 },
                 icon: const Icon(Icons.login_sharp),
                 label: const Text("Proses"),
